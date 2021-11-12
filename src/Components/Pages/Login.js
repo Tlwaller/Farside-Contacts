@@ -1,5 +1,5 @@
 import React from 'react';
-import fsdlogo from '../../images/FSDLogo.png';
+import fsdlogo from '../../Images/FSDLogo.png';
 
 const Login = () => {
     return (

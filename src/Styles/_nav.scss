@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    align-items: flex-end;
+    width: 100vw;
+    height: 50px;
+    background-color: #7fdfe4;
+
+    .nav-tabs-container {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+    }
+    .nav-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 30px;
+        margin-left: 5px;
+        border-radius: 10px 10px 0px 0px;
+        background-color: whitesmoke;
+    }
+}
