@@ -1,6 +1,7 @@
 nav {
     display: flex;
     align-items: flex-end;
+    position: absolute;
     width: 100vw;
     height: 50px;
     background-color: #b2dee070;
@@ -17,7 +18,7 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70px;
+        min-width: 70px;
         height: 25px;
         margin-left: 5px;
         border-radius: 6px 6px 0px 0px;
@@ -25,6 +26,11 @@ nav {
         border: 1px solid rgb(209, 209, 209);
         font-size: 14px;
         cursor: pointer;
+
+        h4 {
+            font-weight: normal;
+            padding: 0px 5px 0px 5px;
+        }
     }
 
     .selected-tab {
@@ -36,14 +42,15 @@ nav {
         border: solid rgb(163, 163, 163);
         border-width: 2px 2px 0px 2px;
         font-size: 16px;
+
     }
 
     .selected-tab::after {
+        content: "";
         bottom: -3px;
         width: 70px;
         position: relative;
         z-index: 999;
-        content: "";
         background-color: whitesmoke;
         height: 10px;
     }

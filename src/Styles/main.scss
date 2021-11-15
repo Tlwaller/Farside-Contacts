@@ -1,8 +1,9 @@
-@import'./_utilities.scss';
+@import'./shared.scss';
 @import'./_login.scss';
 @import'./nav';
+@import'./_home.scss';
 
 body {
     background-color: whitesmoke;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }

@@ -1,0 +1,19 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .add-client-btn {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        padding-top: 20px;
+        cursor: pointer;
+    }
+}
