@@ -48,7 +48,7 @@ nav {
     .selected-tab::after {
         content: "";
         bottom: -3px;
-        width: 70px;
+        width: 100%;
         position: relative;
         z-index: 999;
         background-color: whitesmoke;
