@@ -39,5 +39,6 @@ app.post("/auth/logout", authController.logoutUser);
 
 //clients endpoints
 app.get("/api/clients", clientsController.getClients);
+app.post("/api/clients", clientsController.addClient);
 
 app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}.`))

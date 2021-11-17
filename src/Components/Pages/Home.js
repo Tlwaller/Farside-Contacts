@@ -39,8 +39,8 @@ export default class Home extends Component {
                                         <td>{client.client_name}</td> 
                                         <td>{client.address_1}</td>
                                         <td>{client.address_2}</td>
-                                        <td><a href={client.website}>{client.website}</a></td>
-                                        <td><a href="tel:8174881445">{client.phone}</a></td>
+                                        <td><a href={`https://${client.website}`} target="_blank">{client.website}</a></td>
+                                        <td><a href={`tel:${client.phone}`}>{client.phone}</a></td>
                                         <td>coming soon</td>
                                         <td>
                                             <select>
