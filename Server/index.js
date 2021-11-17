@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require('express');
+const cors = require('cors');
 const session = require('express-session');
 const { Client } = require('pg');
 
@@ -8,7 +9,7 @@ const authController = require('./Controllers/auth controller');
 const clientsController = require('./Controllers/clients controller');
 
 const app = express();
-app.use(express.json());
+app.use(cors());
 
 const client = new Client({
     connectionString: CONNECTION_STRING,
@@ -19,15 +20,16 @@ const client = new Client({
 client.connect();
 app.set('db', client);
 
-
+app.use(express.json());
 app.use(session({
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    secret: SESSION_SECRET,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 3
+        maxAge: 1000 * 60 * 60 * 24 * 7
     }
-}))
+}));
+app.use( express.static( `${__dirname}/../build` ) );
 
 //authorization endpoints
 app.get("/auth/user", authController.getUser);
