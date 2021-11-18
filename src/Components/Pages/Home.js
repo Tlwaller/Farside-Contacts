@@ -1,20 +1,23 @@
-import axios from 'axios';
 import React, { Component } from 'react'
+import axios from 'axios';
+import ClientTable from '../ClientTable';
 
 export default class Home extends Component {
     constructor() {
         super();
         this.state = {
-            clients: []
+            clients: [],
+            contacts: []
         };
     };
 
     componentDidMount() {
         axios.get(`http://localhost:4808/api/clients`).then(
-            (res) => this.setState({clients: res.data}))
-            
+            (res) => this.setState({clients: res.data}));
+        
+        axios.get(`http://localhost:4808/api/contacts`).then(
+            (res) => this.setState({contacts: res.data}));
     };
-
     render() {
         return (
             <div className="home-container">
@@ -30,35 +33,13 @@ export default class Home extends Component {
                             <th>Additional contacts</th>
                         </tr>
                     </thead>
-                    
                     <tbody>
-                        {
-                            this.state.clients.map((client, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{client.client_name}</td> 
-                                        <td>{client.address_1}</td>
-                                        <td>{client.address_2}</td>
-                                        <td><a href={`https://${client.website}`} target="_blank">{client.website}</a></td>
-                                        <td><a href={`tel:${client.phone}`}>{client.phone}</a></td>
-                                        <td>coming soon</td>
-                                        <td>
-                                            <select>
-                                                <option>coming soon</option>
-                                                <option>coming soon</option>
-                                                <option>coming soon</option>
-                                                </select>
-                                            </td>
-                                    </tr>
-                                )
-                            })
-                        }
+                    {
+                        this.state.clients.map((client, i) => {
+                            return <ClientTable key={i} client={client} contacts={this.state.contacts}/>
+                        })
+                    }
                     </tbody>
-
-                    <div className="add-client-btn">
-                        <img alt="add client" src="https://img.icons8.com/material-outlined/24/000000/add.png"/>
-                        <span>Add client</span>
-                    </div>
                 </table>
             </div>
         )

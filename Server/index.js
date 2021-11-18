@@ -7,6 +7,7 @@ const { Client } = require('pg');
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const authController = require('./Controllers/auth controller');
 const clientsController = require('./Controllers/clients controller');
+const contactsController = require('./Controllers/contacts controller');
 
 const app = express();
 app.use(cors());
@@ -17,6 +18,7 @@ const client = new Client({
         rejectUnauthorized: false
     }
 });
+
 client.connect();
 app.set('db', client);
 
@@ -40,5 +42,8 @@ app.post("/auth/logout", authController.logoutUser);
 //clients endpoints
 app.get("/api/clients", clientsController.getClients);
 app.post("/api/clients", clientsController.addClient);
+
+//contacts endpoints
+app.get('/api/contacts', contactsController.getClientContacts);
 
 app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}.`))
