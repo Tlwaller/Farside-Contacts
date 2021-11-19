@@ -5,8 +5,7 @@ export default class ClientTable extends Component {
         super(props);
         this.state = {
             client: this.props.client,
-            contacts: this.props.contacts,
-            primaryContact: {}
+            contacts: this.props.contacts
         };
     };
 
@@ -19,7 +18,15 @@ export default class ClientTable extends Component {
                 <td>{client.address_2}</td>
                 <td><a href={`${client.website}`} rel="noreferrer" target="_blank">{client.website}</a></td>
                 <td><a href={`tel:${client.phone}`}>{client.phone}</a></td>
-                <td>coming soon</td>
+                <td>
+                    {
+                        this.state.contacts.map((contact, i) => {
+                            if(contact.primary_contact === true && contact.client_id === this.state.client.client_id) {
+                                return <span>{contact.contact_name}</span>
+                            } else return null;
+                        })
+                    }
+                    </td>
                 <td>
                     <select>
                         {
