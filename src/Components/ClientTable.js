@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { Component } from 'react';
+import dots from '../Images/dots.png';
 
 export default class ClientTable extends Component {
     constructor(props) {
@@ -9,10 +11,23 @@ export default class ClientTable extends Component {
         };
     };
 
+    removeClient = () => {
+        axios({
+            method: 'delete',
+            url: 'http://localhost:4808/api/clients',
+            data: {
+                client_id: this.state.client.client_id
+            }
+        });
+    };
+
     render() {
         const { client } = this.state;
         return (
             <tr>
+                <td>
+                    <img src={dots} alt='client options' height='25px'/>
+                </td>
                 <td>{client.client_name}</td> 
                 <td>{client.address_1}</td>
                 <td>{client.address_2}</td>

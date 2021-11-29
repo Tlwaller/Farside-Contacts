@@ -8,8 +8,8 @@ import Home from './Components/Pages/Home';
 const FSRoutes = () => {
 return(
     <Routes>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>} />
     </Routes>
     )
 };

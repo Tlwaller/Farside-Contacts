@@ -42,6 +42,8 @@ app.post("/auth/logout", authController.logoutUser);
 //clients endpoints
 app.get("/api/clients", clientsController.getClients);
 app.post("/api/clients", clientsController.addClient);
+app.delete("/api/clients", clientsController.removeClient);
+app.put('/api/clients', clientsController.editClient);
 
 //contacts endpoints
 app.get('/api/contacts', contactsController.getClientContacts);

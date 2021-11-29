@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios';
 import ClientTable from '../ClientTable';
+import { connect } from 'react-redux';
 
-export default class Home extends Component {
+class Home extends Component {
     constructor() {
         super();
         this.state = {
@@ -12,12 +12,9 @@ export default class Home extends Component {
     };
 
     componentDidMount() {
-        axios.get(`http://localhost:4808/api/clients`).then(
-            (res) => this.setState({clients: res.data}));
-        
-        axios.get(`http://localhost:4808/api/contacts`).then(
-            (res) => this.setState({contacts: res.data}));
+        this.setState({clients: this.props.clients});
     };
+
     render() {
         return (
             <div className="home-container">
@@ -31,6 +28,7 @@ export default class Home extends Component {
                             <th>Phone</th>
                             <th>Primary contact</th>
                             <th>Additional contacts</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,3 +43,11 @@ export default class Home extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        clients: state.clients
+    }
+}
+
+export default connect(mapStateToProps)(Home);
