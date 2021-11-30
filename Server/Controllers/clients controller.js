@@ -5,11 +5,11 @@ let clients = JSON.parse(data);
 
 module.exports = {
     getClients: async (req, res) => {
-        if(req.session.user) {
+        // if(req.session.user) {
             return res.status(200).json(clients);
-        } else return res.status(403).json({
-            error: "Please log in."
-        })       
+        // } else return res.status(403).json({
+        //     error: "Please log in."
+        // })       
     },
 
     addClient: async (req, res) => {

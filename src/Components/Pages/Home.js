@@ -1,24 +1,17 @@
 import React, { Component } from 'react'
 import ClientTable from '../ClientTable';
+import { updateClients } from '../../Redux/reducers/clientReducer';
 import { connect } from 'react-redux';
 
 class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-            clients: [],
-            contacts: []
-        };
-    };
-
     componentDidMount() {
-        this.setState({clients: this.props.clients});
+        this.props.updateClients()
     };
 
     render() {
         return (
             <div className="home-container">
-                <table className="co">
+                    <table className="co">
                     <thead>
                         <tr>
                             <th>Client</th>
@@ -28,13 +21,12 @@ class Home extends Component {
                             <th>Phone</th>
                             <th>Primary contact</th>
                             <th>Additional contacts</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                     {
-                        this.state.clients.map((client, i) => {
-                            return <ClientTable key={i} client={client} contacts={this.state.contacts}/>
+                        this.props.clients.map((client, i) => {
+                            return <ClientTable key={i} client={client}/>
                         })
                     }
                     </tbody>
@@ -46,8 +38,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        clients: state.clients
+        clients: state.clientReducer.clients
     }
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, {updateClients})(Home);
