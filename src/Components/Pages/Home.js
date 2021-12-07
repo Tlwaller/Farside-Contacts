@@ -16,7 +16,6 @@ class Home extends Component {
                         <tr>
                             <th>Client</th>
                             <th>Address 1</th>
-                            <th>Address 2</th>
                             <th>Website</th>
                             <th>Phone</th>
                             <th>Primary contact</th>
@@ -30,6 +29,9 @@ class Home extends Component {
                         })
                     }
                     </tbody>
+                <tfoot><tr><td>
+                    <button className="add-client-btn">New client</button>
+                </td></tr></tfoot>
                 </table>
             </div>
         )

@@ -6,14 +6,15 @@
     width: 100vw;
     height: 100vh;
 
-    .add-client-btn {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 80vw;
-        padding-top: 20px;
-        cursor: pointer;
+    tfoot {
+        position: relative;
+
+        .add-client-btn {
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            margin-left: -15.45px;
+
+        }
     }
 }

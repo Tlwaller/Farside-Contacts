@@ -15,7 +15,6 @@ export default class ClientTable extends Component {
             <tr>
                 <td>{client.name}</td> 
                 <td>{client.address1}</td>
-                <td>{client.address2}</td>
                 <td><a href={`${client.website}`} rel="noreferrer" target="_blank">{client.website}</a></td>
                 <td><a href={`tel:${client.phone}`}>{client.phone}</a></td>
                 <td>
@@ -32,7 +31,7 @@ export default class ClientTable extends Component {
                     <select>
                         {
                             client.contacts.map((contact, i) => {
-                                return <option key={i}>{contact.fName}</option>
+                                return <option key={i}>{contact.fName + ' ' + contact.lName}</option>
                             })
                         }
                     </select>
