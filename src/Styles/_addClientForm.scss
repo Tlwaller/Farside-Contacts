@@ -78,4 +78,30 @@
             outline: none;
             border-width: 0 0 2px 0;
         }
+
+        .acf-submit {
+            font-family: 'Quicksand', sans-serif;
+            margin-top: 20px;
+            background-color: $polar-blue-lite;
+            width: 100%;
+            font-size: 16px;
+            line-height: 25px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: rgba(28, 82, 136, 0.2) -1px 4px 2px;
+            transition: all ease-in-out .2s;
+        }
+
+        .acf-submit:hover {
+            transition: all ease-in-out .2s;
+            cursor: pointer;
+            background-color: $polar-blue;
+        }
+
+        .acf-submit:active {
+            transition: all ease-in-out .1s;
+            margin-top: 22px;
+            background-color: $polar-blue;
+            box-shadow: rgba(28, 82, 136, 0.2) 0px 2px;
+        }
 }

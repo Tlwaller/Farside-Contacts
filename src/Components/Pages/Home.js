@@ -7,6 +7,9 @@ import AddClientForm from '../AddClientForm';
 class Home extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            display: 'none'
+        }
         this.ChildElement = React.createRef();
     }
 
@@ -14,16 +17,16 @@ class Home extends Component {
         this.props.updateClients()
     };
 
-    handleClick = () => {
-        // const childelement = this.ChildElement.current;
-        this.ChildElement.current.toggleForm();
-        console.log(this.ChildElement.current)
+    toggleForm = () => {
+        if (this.state.display === 'flex') {
+            this.setState({display: 'none'});
+        } else this.setState({display: 'flex'})
     }
 
     render() {
         return (
             <div className="home-container">
-                <AddClientForm className='add-client-form' ref={this.ChildElement} />
+                <AddClientForm className='add-client-form' ref={this.ChildElement} display={this.state.display} toggleForm={this.toggleForm}/>
                     <table className="co">
                     <thead>
                         <tr>
@@ -43,7 +46,9 @@ class Home extends Component {
                     }
                     </tbody>
                 <tfoot><tr><td>
-                    <button className="add-client-btn" onClick={this.handleClick}>Add client</button>
+                    <button className="add-client-btn" onClick={this.toggleForm}>
+                    <i className="fas fa-plus-circle"/>
+                    &nbsp;Add client</button>
                 </td></tr></tfoot>
                 </table>
             </div>

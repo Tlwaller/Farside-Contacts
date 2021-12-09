@@ -5,26 +5,23 @@ let clients = JSON.parse(data);
 
 module.exports = {
     getClients: async (req, res) => {
-        // if(req.session.user) {
-            return res.status(200).json(clients);
-        // } else return res.status(403).json({
-        //     error: "Please log in."
-        // })       
+        return res.status(200).json(clients);
     },
 
     addClient: async (req, res) => {
         let { id, name, address1, address2, website, phone, contacts, primaryContact } = req.body;
+        console.log(req.body)
 
-        if(address1.length == null || address1.length === 0) address1 = "N/A";
+        if(address1 == null || address1.length === 0) address1 = "N/A";
         if(address2 == null || address2.length === 0) address2 = "N/A";
-        if(website.length == null || website.length === 0) website = "N/A";
+        if(website == null || website.length === 0) website = "N/A";
         if(phone == null || phone.length === 0) phone = "N/A";
         if(contacts == null || contacts.length === 0) contacts = [];
         if(primaryContact == null || primaryContact.length === 0) primaryContact = "N/A";
 
         if(clients.some(client => client.name === name)) {
             return res.status(401).json({
-                //make this await approval or denial
+                //make this await override
                 error: "A client already exists under the name " + name + "."
             })};
 
