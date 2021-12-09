@@ -6,15 +6,7 @@
     width: 100vw;
     height: 100vh;
 
-    tfoot {
-        position: relative;
-
-        .add-client-btn {
-            position: absolute;
-            cursor: pointer;
-            width: 100%;
-            margin-left: -15.45px;
-
-        }
+    .add-client-form {
+        transition: display ease-in-out 3s;
     }
 }

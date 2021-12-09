@@ -1,0 +1,70 @@
+.add-client-form-container {
+    width: 50vw;
+    height: 80vh;
+    background-color: whitesmoke;
+    position: absolute;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 20px;
+    z-index: 999;
+    padding: 20px;
+
+    .acf-head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        background-color: $polar-blue-lite;
+        border-radius: 15px 15px 0px 0px;
+        padding: 0 20px 0 20px;
+        margin: -20px -20px 0 -20px;
+
+        .acf-close { cursor: pointer; }
+
+        .acf-name {
+            background-color: transparent;
+            border: solid gray;
+            border-width: 0 0 2px 0;
+            font-size: 20px;
+            line-height: 25px;
+            background-image: url('../images/pencil-svgrepo-com.svg');
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: 10% 50%;
+        }
+
+        .acf-name:focus {
+            border-width: 0 0 3px 0;
+            outline: none;
+        }
+
+        .acf-name::selection { background-color: $polar-blue; }
+    }
+            
+        .acf-input {
+                background-color: transparent;
+                border: solid gray;
+                border-width: 0 0 1px 0;
+                height: auto;
+                width: 100%;
+                font-size: 16px;
+                line-height: 25px;
+                background-image: url('../images/pencil-svgrepo-com.svg');
+                background-repeat: no-repeat;
+                background-position: 100%;
+                background-size: 10% 50%;
+                margin-top: 30px;
+                line-break: auto;
+                font-family: 'Quicksand', sans-serif;
+                color: #333;
+                transition: box-shadow ease-in-out .2s;
+            }
+
+        .acf-input:focus, .acf-input:hover {
+            transition: box-shadow ease-in-out .2s;
+            box-shadow: rgba(52, 154, 255, 0.2) 0px 4px 4px -2px;
+            outline: none;
+            border-width: 0 0 2px 0;
+        }
+}

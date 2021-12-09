@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import fsdlogo from '../../Images/FSDLogo.png';
+import fsdlogo from '../../images/FSDLogo.png'
 
 export default class Login extends Component {
     render() {
@@ -23,3 +23,4 @@ export default class Login extends Component {
         )
     }
 }
+

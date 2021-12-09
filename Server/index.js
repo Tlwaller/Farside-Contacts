@@ -2,25 +2,14 @@ require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
-const { Client } = require('pg');
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, SESSION_SECRET } = process.env;
 const authController = require('./Controllers/auth controller');
 const clientsController = require('./Controllers/clients controller');
 const contactsController = require('./Controllers/contacts controller');
 
 const app = express();
 app.use(cors());
-
-const client = new Client({
-    connectionString: CONNECTION_STRING,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
-
-client.connect();
-app.set('db', client);
 
 app.use(express.json());
 app.use(session({
