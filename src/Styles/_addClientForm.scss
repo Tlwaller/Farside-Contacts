@@ -1,3 +1,14 @@
+.outside-click-div {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+    background-color: rgba(136, 136, 136, 0.459);
+}
+
 .add-client-form-container {
     width: 50vw;
     height: 80vh;

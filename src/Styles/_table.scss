@@ -34,12 +34,13 @@ table {
             margin-left: -15.45px;
             border: none;
             cursor: pointer;
-            transition: box-shadow ease-in-out .3s;
+            transition: all ease-in-out .3s;
             
         }
         .add-client-btn:hover {
+            background-color: whitesmoke;
             box-shadow: rgba(175, 175, 175, 0.2) 0px 4px 20px;
-            transition: box-shadow ease-in-out .3s;
+            transition: all ease-in-out .3s;
         }
     }
     
