@@ -11,7 +11,7 @@
 
 .add-client-form-container {
     width: 50vw;
-    height: 80vh;
+    height: 85vh;
     background-color: whitesmoke;
     position: absolute;
     margin: auto;
@@ -20,7 +20,7 @@
     z-index: 999;
     padding: 20px;
 
-    .acf-head {
+    .aclf-head {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -31,9 +31,9 @@
         padding: 0 20px 0 20px;
         margin: -20px -20px 0 -20px;
 
-        .acf-close { cursor: pointer; }
+        .aclf-close { cursor: pointer; }
 
-        .acf-name {
+        .aclf-name {
             background-color: transparent;
             border: solid gray;
             border-width: 0 0 2px 0;
@@ -45,63 +45,135 @@
             background-size: 10% 50%;
         }
 
-        .acf-name:focus {
+        .aclf-name:focus {
             border-width: 0 0 3px 0;
             outline: none;
         }
 
-        .acf-name::selection { background-color: $polar-blue; }
+        .aclf-name::selection { background-color: $polar-blue; }
     }
             
-        .acf-input {
-                background-color: transparent;
-                border: solid gray;
-                border-width: 0 0 1px 0;
-                height: auto;
-                width: 100%;
-                font-size: 16px;
-                line-height: 25px;
-                background-image: url('../images/pencil-svgrepo-com.svg');
-                background-repeat: no-repeat;
-                background-position: 100%;
-                background-size: 10% 50%;
-                margin-top: 30px;
-                line-break: auto;
-                font-family: 'Quicksand', sans-serif;
-                color: #333;
-                transition: box-shadow ease-in-out .2s;
-            }
-
-        .acf-input:focus, .acf-input:hover {
-            transition: box-shadow ease-in-out .2s;
-            box-shadow: rgba(52, 154, 255, 0.2) 0px 4px 4px -2px;
-            outline: none;
-            border-width: 0 0 2px 0;
-        }
-
-        .acf-submit {
-            font-family: 'Quicksand', sans-serif;
-            margin-top: 20px;
-            background-color: $polar-blue-lite;
+    .aclf-input, .acof-input {
+            background-color: transparent;
+            border: solid gray;
+            border-width: 0 0 1px 0;
+            height: auto;
             width: 100%;
             font-size: 16px;
             line-height: 25px;
-            border: none;
-            border-radius: 8px;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-position: 100%;
+            background-size: 10% 50%;
+            margin-top: 30px;
+            font-family: 'Quicksand', sans-serif;
+            color: #333;
+            transition: box-shadow ease-in-out .2s;
+        }
+
+    .aclf-input:focus, .aclf-input:hover, .acof-input:focus, .acof-input:hover {
+        transition: box-shadow ease-in-out .2s;
+        box-shadow: rgba(52, 154, 255, 0.2) 0px 4px 4px -2px;
+        outline: none;
+    }
+
+    .aclf-input:focus, .acof-input { border-bottom-width:2px; }
+
+    .aclf-submit, .acof-btn, .acof-submit {
+        font-family: 'Quicksand', sans-serif;
+        background-color: $polar-blue-lite;
+        width: 100%;
+        font-size: 16px;
+        line-height: 25px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: rgba(28, 82, 136, 0.2) -1px 4px 2px;
+        transition: all ease-in-out .2s;
+    }
+
+    .aclf-submit, .aclf-add-contact-form-container, .aclf-input, .acof-input, .acof-submit { margin-top: 30px; }
+
+    .aclf-submit:hover, .acof-btn:hover, .acof-submit:hover {
+        transition: all ease-in-out .2s;
+        cursor: pointer;
+        background-color: $polar-blue;
+    }
+
+    .aclf-submit:active {
+        margin-top: 32px;
+    }
+
+    .aclf-submit:active, .acof-btn:active {
+        transition: all ease-in-out .1s;
+        background-color: $polar-blue;
+        box-shadow: rgba(28, 82, 136, 0.2) 0px 2px;
+    }
+
+    .aclf-add-contact-form-container {
+        
+
+        .acof-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .add-contact-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: -27px;
+            max-width: 100%;
+            background-color: #fff;
             box-shadow: rgba(28, 82, 136, 0.2) -1px 4px 2px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            padding: 10px;
+        }
+
+        .acof-closed {
+            transition: all ease-in-out .2s;
+            height: 0px;
+
+            .acof-input, .acof-submit {
+                opacity: 0%;
+                height: 0px;
+                transition: all ease-in-out .2s;
+            }
+        }
+
+        .acof-open {
+            transition: all ease-in-out .2s;
+
+            .acof-input, .acof-submit {
+                transition: all ease-in-out .2s;
+                opacity: 100%;
+                height: 7%;
+            }
+        }
+
+        .acof-btn-closed {
+            box-shadow: rgba(28, 82, 136, 0.2) -1px 4px 2px;
+        }
+
+        .acof-btn-open {
+            box-shadow: none;
+        }
+
+        .acof-icon {
             transition: all ease-in-out .2s;
         }
 
-        .acf-submit:hover {
-            transition: all ease-in-out .2s;
-            cursor: pointer;
-            background-color: $polar-blue;
+        .fa-plus-circle {
+            transform: rotate(180deg);
         }
 
-        .acf-submit:active {
-            transition: all ease-in-out .1s;
-            margin-top: 22px;
-            background-color: $polar-blue;
-            box-shadow: rgba(28, 82, 136, 0.2) 0px 2px;
+        .fa-chevron-up {
+            transform: rotate(0deg);
         }
+    }
 }

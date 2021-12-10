@@ -10,7 +10,6 @@ class Home extends Component {
         this.state = {
             display: 'none'
         }
-        this.ChildElement = React.createRef();
     }
 
     componentDidMount() {

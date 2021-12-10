@@ -9,15 +9,13 @@ module.exports = {
     },
 
     addClient: async (req, res) => {
-        let { id, name, address1, address2, website, phone, contacts, primaryContact } = req.body;
-        console.log(req.body)
+        let { id, name, address1, address2, website, phone, contacts } = req.body;
 
         if(address1 == null || address1.length === 0) address1 = "N/A";
         if(address2 == null || address2.length === 0) address2 = "N/A";
         if(website == null || website.length === 0) website = "N/A";
         if(phone == null || phone.length === 0) phone = "N/A";
         if(contacts == null || contacts.length === 0) contacts = [];
-        if(primaryContact == null || primaryContact.length === 0) primaryContact = "N/A";
 
         if(clients.some(client => client.name === name)) {
             return res.status(401).json({
@@ -32,8 +30,7 @@ module.exports = {
                 address2: address2,
                 website: website,
                 phone: phone,
-                contacts: contacts,
-                primaryContact: primaryContact
+                contacts: contacts
             }], null, 2);
 
             return fs.writeFile('Data/clients.json', newClient, finished);
