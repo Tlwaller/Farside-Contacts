@@ -13,7 +13,7 @@ module.exports = {
     },
 
     registerUser: (req, res) => {
-        const { userId, username, password } = req.body;
+        const { username, password } = req.body;
 
         if(users.some(e => e.username === req.body.username)){
             return res.status(401).json({error: 'Username taken.'});
@@ -21,13 +21,13 @@ module.exports = {
             const salt = bcrypt.genSaltSync(10);
             bcrypt.hash(password,salt).then(hash => {
                 const newUser = JSON.stringify([...users, {
-                    userId: userId,
+                    id: users.length + 1,
                     username: username,
                     password: hash
                 }], null, 2);
                 
                 req.session.user = {
-                    userId,
+                    id: users.length,
                     username,
                     password
                 }
