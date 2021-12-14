@@ -26,6 +26,10 @@ class AddClientForm extends Component {
         };
     };
 
+    componentDidMount(){
+        console.log(this.props.userId)
+    }
+
     toggleAcof = e => {
         e.preventDefault();
         if(this.state.acofDisplay === "acof-closed") {
@@ -73,7 +77,9 @@ class AddClientForm extends Component {
                     <form>
                         <div className="aclf-head">
                             <input className="aclf-name" type='text' placeholder="New client" onChange={e => this.setState({name: e.target.value})}/>
-                            <i className="fas fa-times aclf-close" onClick={this.props.toggleForm}/>
+                            <div className="aclf-close-container">
+                                <i className="fas fa-times aclf-close" onClick={this.props.toggleForm}/>
+                            </div>
                         </div>
                         
                         <input className="aclf-input" type='text' placeholder="Address" onChange={e => this.setState({address1: e.target.value})}/>
@@ -96,6 +102,7 @@ class AddClientForm extends Component {
 
                                 <input className="acof-submit" type="submit" value=" + Add contact" onClick={e => this.addContact(e)}/>
                             </div>
+
                         </div>
 
                         <input className="aclf-submit" type='submit' onClick={this.handleSubmit}/>
@@ -109,7 +116,8 @@ class AddClientForm extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-        id: reduxState.clientReducer.id
+        clientId: reduxState.clientReducer.id,
+        userId: reduxState.userReducer.userIdc
     }
 }
 

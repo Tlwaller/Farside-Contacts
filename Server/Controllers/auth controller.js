@@ -55,7 +55,7 @@ module.exports = {
                 bcrypt.compare(password, hash).then(match => {
                     if(match) {
                         req.session.user = {
-                            user_id: user.userId,
+                            userId: user.userId,
                             username: user.username
                         };
                         return res.status(200).json(req.session.user);
