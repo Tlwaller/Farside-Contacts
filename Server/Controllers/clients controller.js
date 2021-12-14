@@ -23,6 +23,12 @@ module.exports = {
                 error: "A client already exists under the name " + name + "."
             })};
 
+            id = clients.length + 1;
+
+            contacts.map((e, i) => {
+                e.id = id * 100 + (i + 1);
+            })
+
             const newClient = JSON.stringify([...clients, {
                 id: id,
                 name: name,

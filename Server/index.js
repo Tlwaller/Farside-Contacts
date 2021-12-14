@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const cors = require('cors');
-const session = require('express-session');
+const cookieSession = require('cookie-session');
 
 const { SERVER_PORT, SESSION_SECRET } = process.env;
 const authController = require('./Controllers/auth controller');
@@ -12,13 +12,11 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use(session({
+app.use(cookieSession({
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }
+    maxAge: 24 * 60 * 60 * 1000
 }));
 app.use( express.static( `${__dirname}/../build` ) );
 
