@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ClientTable from '../ClientTable';
+import ClientTableRow from '../ClientTableRow';
 import { updateClients } from '../../Redux/reducers/clientReducer';
 import { connect } from 'react-redux';
 import AddClientForm from '../AddClientForm';
@@ -29,6 +29,7 @@ class Home extends Component {
                     <table className="co">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Client</th>
                             <th>Address 1</th>
                             <th>Website</th>
@@ -40,7 +41,7 @@ class Home extends Component {
                     <tbody>
                     {
                         this.props.clients.map((client, i) => {
-                            return <ClientTable key={i} client={client}/>
+                            return <ClientTableRow key={i} client={client}/>
                         })
                     }
                     </tbody>

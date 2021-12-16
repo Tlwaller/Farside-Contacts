@@ -4,12 +4,14 @@ import {
 } from 'react-router-dom';
 import Login from './Components/Pages/Login';
 import Home from './Components/Pages/Home';
+import ServiceQueue from './Components/Pages/ServiceQueue';
 
 const FSRoutes = () => {
 return(
     <Routes>
-        <Route path="/login" element={<Login/>}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/queue" element={<ServiceQueue/>}/>
     </Routes>
     )
 };

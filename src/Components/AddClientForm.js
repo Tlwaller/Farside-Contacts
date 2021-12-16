@@ -72,7 +72,7 @@ class AddClientForm extends Component {
     render() {
         const { contact } = this.state;
         return (
-            <div className="outside-click-div" onClick={e => {e.preventDefault(); this.props.toggleForm();}} style={{display: this.props.display}}>
+            <div className="outside-click-div" onClick={e => this.props.toggleForm()} style={{display: this.props.display}}>
                 <div className="add-client-form-container" onClick={e => e.stopPropagation()}>
                     <form>
                         <div className="aclf-head">
