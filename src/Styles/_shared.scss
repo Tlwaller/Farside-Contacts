@@ -2,3 +2,59 @@
 
 $polar-blue: #B2DEE0;
 $polar-blue-lite: #d6feff;
+$high: #ff5151;
+$medium: #ff9f51;
+
+.window-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+//forms styling
+.head-input {
+    background-color: transparent;
+    border: solid gray;
+    border-width: 0 0 2px 0;
+    background-image: url('../images/pencil-svgrepo-com.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 10% 50%;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.head-input:focus {
+    border-width: 0 0 3px 0;
+    outline: none;
+}
+
+input:not(.head-input, .aclf-submit) {
+    background-color: transparent;
+    border: solid gray;
+    border-width: 0 0 1px 0;
+    height: auto;
+    width: 100%;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 10% 50%;
+    margin-top: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    transition: box-shadow ease-in-out .2s;
+}
+
+input:hover, input:focus {
+    transition: box-shadow ease-in-out .2s;
+    box-shadow: rgba(52, 154, 255, 0.2) 0px 4px 4px -2px;
+    outline: none;
+}
+
+input::selection { background-color: $polar-blue; }

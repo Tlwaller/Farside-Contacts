@@ -111,6 +111,14 @@ table {
         }
     }
 
+    .service-queue-row {
+        
+        .service-link {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+
     tfoot {
         position: relative;
         height: 40px;

@@ -1,0 +1,55 @@
+.service-info-window {
+    width: 80vw;
+    height: 70vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 20px;
+    border-radius: 15px;
+
+    .si-head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 70px;
+        background-color: $polar-blue;
+        top: 0;
+        padding: 12px 15px;
+        border-radius: 15px 15px 0 0;
+
+        input, button, div { margin-right: 30px; }
+
+        .si-due-date {
+            display: flex;
+            align-items: center;
+
+            .si-due-date-input {
+                margin: 0 0 0 10px;
+                padding: none;
+            }
+        }
+
+        .si-priority-btn {
+            border-radius: 15px;
+            padding: 2px 10px;
+            border: none;
+            background-color: $high;
+            font-family: 'Quicksand', sans-serif;
+        }
+    }
+
+    .si-input {
+        width: 50%;
+        margin-left: 15px;
+    }
+
+    .si-submission-info {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        label {
+            display: flex;
+            align-items: flex-end;
+            padding-left: 15px;
+        }
+    }
+}

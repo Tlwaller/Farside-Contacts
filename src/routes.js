@@ -1,19 +1,20 @@
 import {
-    Routes,
-    Route
+    Switch,
+    Route,
+    BrowserRouter as Router
 } from 'react-router-dom';
 import Login from './Components/Pages/Login';
 import Home from './Components/Pages/Home';
 import ServiceQueue from './Components/Pages/ServiceQueue';
+import ServiceInfo from './Components/Pages/ServiceInfo';
 
-const FSRoutes = () => {
-return(
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/queue" element={<ServiceQueue/>}/>
-    </Routes>
-    )
-};
-
-export default FSRoutes;
+export default (
+    <Router>
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/queue" component={ServiceQueue}/>
+            <Route path="/service" component={ServiceInfo}/>
+        </Switch>
+    </Router>
+)

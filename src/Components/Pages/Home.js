@@ -24,7 +24,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home-container">
+            <div className="window-container">
                 <AddClientForm className='add-client-form' ref={this.ChildElement} display={this.state.display} toggleForm={this.toggleForm}/>
                     <table className="co">
                     <thead>

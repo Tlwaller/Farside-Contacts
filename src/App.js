@@ -1,12 +1,12 @@
 import Nav from './Components/Shared/Nav';
-import FSRoutes from './routes';
+import routes from './routes';
 import './Styles/main.scss';
 
 const App = () => {
   return (
     <div className="app">
       <Nav/>
-      <FSRoutes/>
+      {routes}
     </div>
   );
 }

@@ -76,7 +76,7 @@ class AddClientForm extends Component {
                 <div className="add-client-form-container" onClick={e => e.stopPropagation()}>
                     <form>
                         <div className="aclf-head">
-                            <input className="aclf-name" type='text' placeholder="New client" onChange={e => this.setState({name: e.target.value})}/>
+                            <input className="head-input" type='text' placeholder="New client" onChange={e => this.setState({name: e.target.value})}/>
                             <div className="aclf-close-container">
                                 <i className="fas fa-times aclf-close" onClick={this.props.toggleForm}/>
                             </div>

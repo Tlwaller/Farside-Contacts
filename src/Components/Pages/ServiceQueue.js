@@ -35,7 +35,7 @@ export default class ServiceQueue extends Component {
     }
     render() {
         return (
-            <div className='service-queue-container'>
+            <div className='window-container'>
                 <table>
                     <thead>
                         <tr>
@@ -44,7 +44,7 @@ export default class ServiceQueue extends Component {
                             <th>Due date</th>
                             <th>Client</th>
                             <th>Submitter</th>
-                            <th>Submition date</th>
+                            <th>Submission date</th>
                         </tr>
                     </thead>
                     
