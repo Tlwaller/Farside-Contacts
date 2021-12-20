@@ -26,10 +26,6 @@ class AddClientForm extends Component {
         };
     };
 
-    componentDidMount(){
-        console.log(this.props.userId)
-    }
-
     toggleAcof = e => {
         e.preventDefault();
         if(this.state.acofDisplay === "acof-closed") {
